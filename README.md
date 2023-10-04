@@ -54,8 +54,6 @@ The API will be accessible at `http://localhost:5000` by default.
 
 - **Query Robot Memories**: Find relevant answers by querying a robot's memory.
 
-- **RESTful API**: Utilize a RESTful API for easy integration into various applications.
-
 ## Environment Variables
 
 Before running the API, set up the following environment variables in your `.env` file:
@@ -78,7 +76,7 @@ USERNAME=user@mail.com
 
 ### Creating a Robot
 
-To create a new robot, make a POST request to the `/robots` endpoint of the API with the necessary parameters.
+To create a new robot, make a POST request to the `/robot` endpoint of the API with the necessary parameters.
 
 Example using curl:
 
