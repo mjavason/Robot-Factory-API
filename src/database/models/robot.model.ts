@@ -20,11 +20,11 @@ const robotSchema = new Schema<IRobot>(
       {
         question: {
           // type: String | Number,
-          required: true,
+          // required: true,
         },
         answer: {
           // type: String | Number,
-          required: true,
+          // required: true,
         },
       },
     ],
