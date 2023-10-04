@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { robotService } from '../services';
+import { robotService, tensorflowNlpService } from '../services';
 import { SuccessResponse, InternalErrorResponse, NotFoundResponse } from '../helpers/response';
 import { MESSAGES } from '../constants';
 
@@ -66,12 +66,27 @@ class Controller {
 
   async train(req: Request, res: Response) {
     const id = req.params.id;
-    const { question, answer } = req.body;
+    let { question, answer } = req.body;
+    let questionEmbedding: any;
 
     // Find the robot by ID
     const robot = await robotService.findOne({ _id: id });
 
     if (!robot) return NotFoundResponse(res, 'robot not found');
+
+    try {
+      await tensorflowNlpService.initialize();
+
+      // Analyze and encode the question using the NLP service
+      questionEmbedding = await tensorflowNlpService.analyzeText(question);
+      question = questionEmbedding;
+
+      // Save the question-answer pair to the robot's memory
+      // Example: RobotModel.saveMemory(robotId, questionEmbedding, answer);
+    } catch (error) {
+      console.error(error);
+      return InternalErrorResponse(res);
+    }
 
     // Add the question-answer pair to the robot's memories
     robot.memories.push({ question, answer });
