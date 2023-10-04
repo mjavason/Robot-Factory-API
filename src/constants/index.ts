@@ -61,7 +61,7 @@ export const MESSAGES = {
 export const LINKS = {
   API_DOCUMENTATION:
     process.env.API_DOCUMENTATION_URL ||
-    'https://documenter.getpostman.com/view/29278179/2s9YJdVMQt',
+    'https://documenter.getpostman.com/view/29278179/2s9YJdX389',
   EMAIL: 'mailto:app@mail.online',
   GOOGLE_MEET: 'https://meet.google.com',
   PHONE_CALL: 'tel:+2349999999999',
