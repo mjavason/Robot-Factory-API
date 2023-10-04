@@ -6,6 +6,10 @@ import IRobot from '../../interfaces/robot.interface';
 // Define the schema
 const robotSchema = new Schema<IRobot>(
   {
+    name: {
+      type: String,
+      required: true,
+    },
     creator: {
       type: Schema.Types.ObjectId,
       ref: DATABASES.USER,

@@ -5,6 +5,7 @@ class RobotValidation {
   // Validation schema for creating a new robot
   create = {
     body: z.object({
+      name: z.string(),
       creator: z.string().refine((value) => Types.ObjectId.isValid(value), {
         message: 'Invalid ObjectId format',
       }),
@@ -20,6 +21,7 @@ class RobotValidation {
       }),
     }),
     body: z.object({
+      name: z.string().optional(),
       creator: z
         .string()
         .refine((value) => Types.ObjectId.isValid(value), {
@@ -61,7 +63,13 @@ class RobotValidation {
           message: 'Invalid ObjectId format',
         })
         .optional(),
-      // Add validations for other query parameters as needed
+      name: z.string().optional(),
+      creator: z
+        .string()
+        .refine((value) => Types.ObjectId.isValid(value), {
+          message: 'Invalid ObjectId format',
+        })
+        .optional(),
     }),
   };
 }

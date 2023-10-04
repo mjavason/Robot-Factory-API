@@ -4,7 +4,7 @@ dotenv.config({ path: './.env' });
 export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'access-token-secret';
 export const APP_NAME = process.env.APP_NAME || 'app';
 export const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
-export const DB_NAME = process.env.MONGO_DB_NAME || 'robot-factory-api';
+export const DB_NAME = process.env.MONGO_DB_NAME || 'robot-factory';
 export const DB_CONNECTION_STRING =
   process.env.MONGO_DB_URL + DB_NAME || 'mongodb://localhost:27017/' + DB_NAME;
 export const JWT_SECRET = process.env.JWT_SECRET || 'jwt-secret';

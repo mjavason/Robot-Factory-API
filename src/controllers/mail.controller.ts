@@ -1,5 +1,5 @@
 import { mailService, userService } from '../services';
-import { SITE_LINK } from '../constants';
+import { APP_NAME, SITE_LINK } from '../constants';
 import logger from '../helpers/logger';
 const fs = require('fs');
 const handlebars = require('handlebars');
@@ -40,7 +40,7 @@ class Controller {
     const info = await mailService.sendMail(
       email,
       compiledTemplate,
-      '#100DaysOfAPIAwesomeness Welcome',
+      `${APP_NAME} #100DaysOfAPIAwesomeness Welcome`,
     );
 
     console.log(`#100DaysOfAPIAwesomeness Welcome email sent to: ${email}`);
