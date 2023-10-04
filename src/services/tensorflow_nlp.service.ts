@@ -10,6 +10,7 @@ class Service {
 
   async initialize() {
     this.model = await use.load();
+    await tf.setBackend('tensorflow');
   }
 
   async analyzeText(text: string) {
