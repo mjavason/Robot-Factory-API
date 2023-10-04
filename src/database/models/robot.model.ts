@@ -19,11 +19,11 @@ const robotSchema = new Schema<IRobot>(
     memories: [
       {
         question: {
-          type: String,
+          // type: String | Number,
           required: true,
         },
         answer: {
-          type: String,
+          // type: String | Number,
           required: true,
         },
       },
