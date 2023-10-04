@@ -6,3 +6,4 @@
 export { userController } from './user.controller';
 export { mailController } from './mail.controller';
 export { resetTokenController } from './reset_token.controller';
+export { robotController } from './robot.controller';
