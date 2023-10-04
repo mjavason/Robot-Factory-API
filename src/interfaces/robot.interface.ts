@@ -6,8 +6,8 @@ export default interface IRobot extends Document {
   name: string;
   creator: string | Types.ObjectId;
   memories: Array<{
-    // question: any;
-    // answer: any;
+    question: any;
+    answer: any;
   }>;
   deleted?: boolean;
 }

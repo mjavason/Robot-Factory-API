@@ -15,6 +15,12 @@ router.get('/:pagination', robotController.getAll);
 router.post('/', processRequestBody(robotValidation.create.body), robotController.create);
 
 router.post(
+  '/ask/:id',
+  [processRequestParams(robotValidation.ask.params), processRequestBody(robotValidation.ask.body)],
+  robotController.findAnswer,
+);
+
+router.post(
   '/:id/train',
   [
     processRequestParams(robotValidation.train.params),

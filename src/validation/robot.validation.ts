@@ -32,6 +32,18 @@ class RobotValidation {
     }),
   };
 
+  // Validation schema for updating an existing robot
+  ask = {
+    params: z.object({
+      id: z.string().refine((value) => Types.ObjectId.isValid(value), {
+        message: 'Invalid ObjectId format',
+      }),
+    }),
+    body: z.object({
+      question: z.string().optional(),
+    }),
+  };
+
   // Validation schema for deleting a robot
   delete = {
     params: z.object({
